@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This is the root element of the XHTML document, specifying the language and XML namespaces. -->
+<xhtml lang="en"
+       xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core">
+     <!-- The head section contains metadata about the document, such as character set, viewport settings, and title. -->
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Login Page</title>
+         <!-- Linking to external CSS file for styling. -->
+        <h:outputStylesheet library="css" name="loginRegister.css"/>
+    </h:head>
+      <!-- The body section contains the main content of the document. -->
+    <h:body>
+        <!-- The header section typically contains navigation and introductory content. -->
+        <header>
+            <nav>
+                <h:form>
+                     <!-- Navigation links to different pages/actions. -->
+                    <h:commandLink value="Home"  action="#{bean.goToMainPage}"/>
+                    <h:commandLink value="About us"  action="#{bean.goToContactsPage}"/>
+                    <h:commandLink value="Shop"  action="#{bean.goToShopPage}"/>
+                </h:form>
+            </nav>
+        </header>
+        
+        <!-- Registration form -->
+        <h:panelGroup layout="block" styleClass="wrapper">
+            <h:form>
+                <h1>LOGIN</h1>
+                 <!-- Username input -->
+                <h:panelGroup styleClass="input-box">
+                    <h:graphicImage library="images" name="user-solid-24.png"/>
+                    <h:inputText styleClass="inputText" id="usernameInputText" required="true"    
+                                 requiredMessage="Please enter username"
+                                 value="#{register.username}" maxlength="50">
+                        <f:passThroughAttribute  name="placeholder" value="username" />    
+                         <!-- Ajax event to trigger validation on blur -->
+                        <f:ajax event="blur" render="usernameMessage"/>
+                    </h:inputText>
+                    <!-- Error message for username input -->
+                    <h:message id="usernameMessage" for="usernameInputText" styleClass="error"/>
+                </h:panelGroup>
+
+                  <!-- Password input -->
+                <h:panelGroup styleClass="input-box">
+                    <h:graphicImage library="images" name="lock-alt-solid-24.png"/>
+                    <h:inputSecret styleClass="inputText" id="passwordInputText" required="true"       
+                                   requiredMessage="Please enter a password"
+                                   value="#{register.password}" maxlength="30">
+                        <f:passThroughAttribute  name="placeholder" value="password" />  
+                        <!-- Ajax event to trigger validation on blur -->
+                        <f:ajax event="blur" render="passwordMessage"/>
+                    </h:inputSecret>
+                    <!-- Error message for password input -->
+                    <h:message id="passwordMessage" for="passwordInputText" styleClass="error"/>
+                </h:panelGroup>
+
+                  <!-- Forgot password link -->
+                <h:panelGroup styleClass="forgot-pass">
+                    <p>Forgot password?</p>
+                    <h:outputLink value="">forgot password</h:outputLink>
+                </h:panelGroup>
+                  <!-- Login button -->
+                <h:commandButton styleClass="btn"
+                                 value="login"
+                                 action="#{register.login}"/>
+
+                 <!-- Link to registration page -->
+                <h:panelGroup styleClass="register">
+                    <p>Don`t have an account?</p>
+                    <h:outputLink value="registerPage.xhtml">register</h:outputLink>
+                </h:panelGroup>
+                
+            </h:form>
+
+        </h:panelGroup>
+
+
+    </h:body>
+</xhtml>

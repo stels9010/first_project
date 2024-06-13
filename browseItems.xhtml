@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This is the root element of the XHTML document, specifying the language and XML namespaces. -->
+<xhtml lang="en"
+       xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+       xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <!-- The head section contains metadata about the document, such as character set, viewport settings, and title. -->
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Browse Page</title>
+        <!-- Linking to external CSS file for styling. -->
+        <h:outputStylesheet library="css" name="browseitems.css"/>
+    </h:head>
+    <!-- The body section contains the main content of the document. -->
+    <h:body>
+         <!-- The header section typically contains navigation and introductory content. -->
+        <header>
+            <nav>
+                <h:form>
+                    <!-- Navigation links to different pages/actions. -->
+                    <h:commandLink value="Home"  action="#{bean.goToMainPage}"/>
+                    <h:commandLink value="About us"  action="#{bean.goToContactsPage}"/>
+                    <h:commandLink value="Shop"  action="#{bean.goToShopPage}"/>
+                    <h:commandLink value="Log off" action="#{bean.logout}" />
+                </h:form>
+            </nav>
+        </header>
+
+           <!-- Form for searching wine -->
+        <h:panelGroup id="left">
+            <h3>Wine Details</h3>
+        <h:form styleClass="form1">
+            <h:inputText styleClass="inputText" value="#{wineSearch.wineName}" />
+            <h:commandButton styleClass="btn" value="search" action="#{wineSearch.searchWine}" update="wineDetails" />
+        </h:form>
+
+             <!-- Wine Details section -->
+        <h:form styleClass="form2" >
+            <h:panelGroup id="wineDetails">
+                <h:panelGrid columns="2">
+                    <h:outputText value="Name:" />
+                    <h:outputText value="#{wineSearch.wineForm.wineName}" />
+                    <h:outputText value="Description:" />
+                    <h:outputText value="#{wineSearch.wineForm.description}" />
+                    <h:outputText value="Sort:" />
+                    <h:outputText value="#{wineSearch.wineForm.sortWine}" />
+                    <h:outputText value="Size:" />
+                    <h:outputText value="#{wineSearch.wineForm.wineSize}" />
+                    <h:outputText value="Price:" />
+                    <h:outputText value="#{wineSearch.wineForm.price}" />
+                    <h:outputText value="Country of Origin:" />
+                    <h:outputText value="#{wineSearch.wineForm.country}" />
+                </h:panelGrid>
+                 <!-- Display error messages -->
+                <h:messages id="messages" layout="table" style="font-size: 16px; color: red; text-align: center" />
+            </h:panelGroup>
+        </h:form>
+            
+            </h:panelGroup>
+
+    </h:body>
+</xhtml>

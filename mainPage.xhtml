@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- This is the root element of the XHTML document, specifying the language and XML namespaces. -->
+<xhtml lang="en"
+       xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+     <!-- The head section contains metadata about the document, such as character set, viewport settings, and title. -->
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>WineWhisper Shop</title>
+            <!-- Linking to external CSS file for styling. -->
+        <h:outputStylesheet library="css" name="mainPage.css"/>
+    </h:head>
+      <!-- The body section contains the main content of the document. -->
+    <h:body>
+        <!-- The header section typically contains navigation and introductory content. -->
+        <header>
+            <nav>
+                <h:form>
+                    <!-- Navigation links to different pages/actions. -->
+                    <h:commandLink value="Home"  action="#{bean.goToMainPage}"/>
+                    <h:commandLink value="About us"  action="#{bean.goToContactsPage}"/>
+                    <h:commandLink value="Shop"  action="#{bean.goToShopPage}"/>
+                    <h:commandLink value="Log off" action="#{bean.logout}" />
+                </h:form>
+            </nav>
+
+        </header>
+
+        <!-- class intro -->
+        <h:panelGroup layout="block" styleClass="intro">
+            <!-- list item -->
+            <h:panelGroup layout="block" styleClass="list">  
+                <h:panelGroup layout="block" styleClass="item">
+                    <h:graphicImage library="images" name="12.jpg"/>
+                    <h:panelGroup layout="block" styleClass="content">
+                        <h:panelGroup layout="block" styleClass="username">  
+                            <span style="color: #eee; font-weight: 500; font-size: 12px;">Hello,</span>
+                            <h:outputText value="#{sessionScope.username}" /> <!-- session tracking for the username -->
+                        </h:panelGroup>
+                        <h:panelGroup layout="block" styleClass="title">WELCOME TO THE</h:panelGroup>
+                        <h:panelGroup layout="block" styleClass="topic">WineWhisper SHOP</h:panelGroup>
+                        <h:panelGroup layout="block" styleClass="des">
+                            <!-- Intro and inline styling -->
+                            <p> Step into a world where lush vineyards stretch as far as the eye can see, kissed by the gentle sun and nurtured by the rich soil. Our vineyard, nestled in the heart of Bulgaria, is a testament to centuries of wine-making tradition and a dedication to crafting exceptional wines that delight the senses.</p>
+                            <p>At  <span style="color: #f1683a; font-weight: 500;">WineWhisper</span>, we believe that every glass of wine tells a story. From the first bud burst to the final harvest, our grapes are carefully tended to by skilled hands, ensuring that only the finest fruit makes its way into our wines. Each bottle is a reflection of our commitment to quality and our deep respect for the land.</p>
+                            <p>Explore our collection and discover a symphony of flavors waiting to be savored. From crisp whites to bold reds, each varietal is a celebration of the unique terroir of our vineyard. Whether you're a seasoned wine enthusiast or just beginning your journey, there's something here for everyone to enjoy.</p>
+                            <p>Join us as we raise a glass to tradition, innovation, and the simple joy of sharing great wine with friends and family. From our vineyard to your table, welcome to the world of <span style="color: #f1683a; font-weight: 500;">WineWhisper</span>.</p>
+                        </h:panelGroup>
+                    </h:panelGroup>
+                </h:panelGroup>
+            </h:panelGroup>
+
+
+              <!-- Thumbnail links to different sections of the shop -->
+
+            <h:panelGroup layout="block" styleClass="thumbnail">
+                <h:form>
+                    <!-- This attribute specifies the action to be performed when the command link is clicked -->
+                    <h:commandLink styleClass="panel-link" action="#{bean.goToRedWinePage}">
+                        <h:panelGroup layout="block" styleClass="item">
+                            <h:graphicImage library="images" name="redwine10.jpg"/>
+                            <h:panelGroup layout="block" styleClass="content">
+                                <h:panelGroup layout="block" styleClass="title">
+                                    Red Wines
+                                </h:panelGroup>
+                                <h:panelGroup layout="block" styleClass="description">
+                                    See more...
+                                </h:panelGroup>
+                            </h:panelGroup>
+                        </h:panelGroup>
+                    </h:commandLink>
+                </h:form>
+
+
+                <h:form>
+                    <h:commandLink  styleClass="panel-link" action="#{bean.goToChampagnePage}">
+                        <h:panelGroup layout="block" styleClass="item">
+                            <h:graphicImage library="images" name="champagne1.jpg"/>
+                            <h:panelGroup layout="block" styleClass="content">
+                                <h:panelGroup layout="block" styleClass="title">
+                                    Champagnes
+                                </h:panelGroup>
+                                <h:panelGroup layout="block" styleClass="description">
+                                    See more...
+                                </h:panelGroup>
+                            </h:panelGroup>
+                        </h:panelGroup>
+                    </h:commandLink>
+                </h:form>
+
+                <h:form>
+                    <h:commandLink styleClass="panel-link" action="#{bean.goToWhiteWinePage}">
+                        <h:panelGroup layout="block" styleClass="item">
+                            <h:graphicImage library="images" name="whitewine1.jpg"/>
+                            <h:panelGroup layout="block" styleClass="content">
+                                <h:panelGroup layout="block" styleClass="title">
+                                    White Wines
+                                </h:panelGroup>
+                                <h:panelGroup layout="block" styleClass="description">
+                                    See more...
+                                </h:panelGroup>
+                            </h:panelGroup>
+                        </h:panelGroup>
+                    </h:commandLink>
+                </h:form>
+
+                <h:form>
+                    <h:commandLink  styleClass="panel-link" action="#{bean.goToRoseWinePage}">
+                        <h:panelGroup layout="block" styleClass="item">
+                            <h:graphicImage library="images" name="rose5.jpeg"/>
+                            <h:panelGroup layout="block" styleClass="content">
+                                <h:panelGroup layout="block" styleClass="title">
+                                    Rosés
+                                </h:panelGroup>
+                                <h:panelGroup layout="block" styleClass="description">
+                                    See more...
+                                </h:panelGroup>
+                            </h:panelGroup>
+                        </h:panelGroup>
+                    </h:commandLink>
+                </h:form>
+
+            </h:panelGroup>
+
+
+
+        </h:panelGroup>
+
+    </h:body>
+
+</xhtml>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This is the root element of the XHTML document, specifying the language and XML namespaces. -->
+<xhtml lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      <!-- The head section contains metadata about the document, such as character set, viewport settings, and title. -->
+<h:head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About us Page</title>
+     <!-- Linking to external CSS file for styling. -->
+    <h:outputStylesheet library="css" name="aboutus.css"/>
+</h:head>
+      <!-- The body section contains the main content of the document. -->
+ <h:body>
+      <!-- The header section typically contains navigation and introductory content. -->
+         <header>
+            <nav>
+               <h:form>
+                   <!-- Navigation links to different pages/actions. -->
+             <h:commandLink value="Home"  action="#{bean.goToMainPage}"/>
+             <h:commandLink value="About us"  action="#{bean.goToContactsPage}"/>
+             <h:commandLink value="Shop"  action="#{bean.goToShopPage}"/>
+             <h:commandLink value="Log off" action="#{bean.logout}" />
+                </h:form>
+            </nav>
+        </header>
+     
+     <!-- intro -->
+        <h:panelGroup layout="block" styleClass="intro">
+            <!-- list item -->
+            <h:panelGroup layout="block" styleClass="list">  
+                <h:panelGroup layout="block" styleClass="item">
+                    <h:graphicImage library="images" name="12.jpg"/>
+                    <h:panelGroup layout="block" styleClass="content">
+                        <h:panelGroup layout="block" styleClass="topic">ABOUT US</h:panelGroup>
+                        <h:panelGroup layout="block" styleClass="des">
+                            <p>Welcome to WineWhisper, your passport to the world of fine wines and exquisite tastes. At WineWhisper, we believe that every bottle tells a story, and we are dedicated to guiding you through the enchanting journey of discovery and enjoyment.</p>
+                           <h:panelGroup layout="block" styleClass="title">Our Mission:</h:panelGroup>
+                           <p>At WineWhisper, our mission is simple: to ignite your passion for wine and elevate your tasting experience. Whether you're a seasoned aficionado or a curious novice, we are here to share our expertise and enthusiasm, helping you explore the diverse landscape of wines from around the globe.</p>
+                           <h:panelGroup layout="block" styleClass="title">Our Approach:</h:panelGroup>
+                           <p>At the heart of WineWhisper lies a commitment to excellence and authenticity. We curate a handpicked selection of wines, each chosen for its exceptional quality, distinctive character, and compelling narrative. From celebrated classics to hidden gems waiting to be uncovered, every bottle in our collection embodies the artistry and craftsmanship of its winemaker.</p>
+                           <h:panelGroup layout="block" styleClass="title">Our Team:</h:panelGroup>
+                           <p>Behind WineWhisper is a team of dedicated sommeliers, wine enthusiasts, and storytellers, united by a shared love for the vine. With years of experience and a deep-seated passion for all things wine-related, our team is here to serve as your trusted guides on your wine journey. Whether you seek personalized recommendations, tasting notes, or expert advice, we are here to ensure that every sip you take is a moment to cherish.</p>
+                           <h:panelGroup layout="block" styleClass="title">Our Community:</h:panelGroup>
+                           <p>At WineWhisper, we believe that wine is best enjoyed in good company. That's why we invite you to join our vibrant community of fellow wine lovers, where you can share your experiences, exchange recommendations, and connect with like-minded enthusiasts from around the world. From virtual tastings to exclusive events, we offer a variety of opportunities to engage, learn, and celebrate the joys of wine together.</p>
+                           <h:panelGroup layout="block" styleClass="title">Our Commitment:</h:panelGroup>
+                           <p>At WineWhisper, we are committed to fostering a culture of inclusivity, education, and responsible enjoyment. We believe that wine should be approachable and accessible to all, and we are dedicated to promoting diversity and sustainability within the wine industry. Through our partnerships with ethical producers and our support of environmentally conscious practices, we strive to make a positive impact on the world of wine and beyond.</p>
+                           <h:panelGroup layout="block" styleClass="title">Join Us:</h:panelGroup>
+                           <p>Whether you're embarking on a quest for the perfect bottle, seeking to expand your palate, or simply looking to connect with fellow wine enthusiasts, WineWhisper welcomes you with open arms. So pour yourself a glass, take a moment to savor the beauty of each sip, and let WineWhisper be your trusted companion on your wine journey. Cheers to exploration, discovery, and the magic of wine!</p>
+                        </h:panelGroup>
+                    </h:panelGroup>
+                </h:panelGroup>
+            </h:panelGroup>
+            </h:panelGroup>
+ </h:body>
+</xhtml>
