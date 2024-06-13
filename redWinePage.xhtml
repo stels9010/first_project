@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<xhtml lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="jakarta.faces.html">
+    <h:head>
+         <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Red Wine Page</title>
+        <h:outputStylesheet library="css" name="winePagesStyle.css"/>
+    </h:head>
+    <h:body>
+        <header>
+            <nav>
+               <h:form>
+             <h:commandLink value="Home"  action="#{bean.goToMainPage}"/>
+             <h:commandLink value="About us"  action="#{bean.goToContactsPage}"/>
+             <h:commandLink value="Shop"  action="#{bean.goToShopPage}"/>
+             <h:commandLink value="Log off" action="#{bean.logout}" />
+                </h:form>
+            </nav>
+        </header>
+        
+         <h:panelGroup layout="block" styleClass="intro">
+            <!-- list item -->
+            <h:panelGroup layout="block" styleClass="list">
+                <h:panelGroup layout="block" styleClass="topic">Exploring the Rich History of Red Wine</h:panelGroup>
+                <h:panelGroup layout="block" styleClass="item item1">
+                    <h:panelGroup layout="block" styleClass="content"> 
+                        <h:panelGroup layout="block" styleClass="des">
+                            <h:panelGroup layout="block" styleClass="title">Ancient Origins</h:panelGroup>
+                            <p>The story of red wine begins thousands of years ago in the cradle of civilization. Ancient civilizations such as the Egyptians, Greeks, and Romans were among the first to cultivate vineyards and produce wine. In fact, archaeological evidence suggests that winemaking dates back as far as 6000 BC in the region of present-day Georgia.</p>
+                            <h:panelGroup layout="block" styleClass="title">Cultural Significance</h:panelGroup>
+                            <p>Throughout history, red wine has held immense cultural significance. In ancient Greece, it was associated with the god Dionysus and played a central role in religious rituals and festivals. Similarly, in medieval Europe, red wine was a symbol of wealth and prestige, often enjoyed by the nobility at lavish banquets and royal courts.</p>
+                        </h:panelGroup>
+                    </h:panelGroup>
+                    <h:graphicImage styleClass="img1" library="images" name="redwine2.jpg"/>
+                    <h:graphicImage styleClass="img2" library="images" name="redwine4.jpg"/>
+                </h:panelGroup>
+                
+                <h:panelGroup layout="block" styleClass="item item2">
+                    <h:graphicImage library="images" name="redwine5.jpg"/>
+                    <h:panelGroup layout="block" styleClass="content">
+                            <h:panelGroup layout="block" styleClass="title">Medicinal Properties</h:panelGroup>
+                            <p>Red wine has long been revered for its purported health benefits. Ancient civilizations used it for its medicinal properties, and even Hippocrates, the father of modern medicine, praised its use as a disinfectant and digestive aid. Today, scientific research continues to uncover the potential health benefits of moderate red wine consumption, including its role in promoting heart health and longevity.</p>
+                            <h:panelGroup layout="block" styleClass="title">Global Spread</h:panelGroup>
+                            <p>As trade routes expanded and empires rose and fell, the art of wine-making spread across the globe. From the rolling hills of Tuscany to the sun-drenched vineyards of California, each region developed its own unique winemaking traditions, grape varieties, and styles of red wine. Today, wine lovers can explore an endless array of flavors and aromas from every corner of the world.</p>
+                            <h:panelGroup layout="block" styleClass="title">Modern Enjoyment</h:panelGroup>
+                            <p>In the modern era, red wine remains as beloved as ever. It has become a staple of fine dining, social gatherings, and everyday enjoyment for millions of people around the world. Whether sipped with a hearty meal, shared among friends, or savored in solitude, red wine continues to inspire and delight aficionados of all backgrounds.</p>
+                        </h:panelGroup>
+                    </h:panelGroup>
+            </h:panelGroup>
+           
+            </h:panelGroup>
+     
+    </h:body>
+</xhtml>

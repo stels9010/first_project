@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This is the root element of the XHTML document, specifying the language and XML namespaces. -->
+<xhtml lang="en"
+       xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+     <!-- The head section contains metadata about the document, such as character set, viewport settings, and title. -->
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Shop Page</title>
+         <!-- Linking to external CSS file for styling. -->
+        <h:outputStylesheet library="css" name="shopPage.css"/>
+    </h:head>
+     <!-- The body section contains the main content of the document. -->
+    <h:body>
+        <!-- The header section typically contains navigation and introductory content. -->
+        <header>
+            <nav>
+                <h:form>
+                     <!-- Navigation links to different pages/actions. -->
+                    <h:commandLink value="Home"  action="#{bean.goToMainPage}"/>
+                    <h:commandLink value="About us"  action="#{bean.goToContactsPage}"/>
+                    <h:commandLink value="Shop"  action="#{bean.goToShopPage}"/>
+                    <h:commandLink value="Log off" action="#{bean.logout}" />
+                </h:form>
+            </nav>
+        </header>
+
+        <h:form>
+              <!-- Container panel group -->
+            <h:panelGroup layout="block" styleClass="container">
+                 <!-- First panel group for searching an item -->
+                <h:panelGroup layout="block" styleClass="panel-1">
+                    <h:panelGroup>
+                         <!-- Title for the first panel -->
+                       <h:panelGroup layout="block" styleClass="title">SEARCH AN ITEM</h:panelGroup>
+                       <!-- Button for searching -->
+                        <h:commandButton styleClass="btn"
+                                         value="search"
+                                         action="#{bean.goToBrowseItems}"/>
+                    </h:panelGroup>
+                </h:panelGroup>
+
+                  <!-- Vertical line between panels -->
+                <h:panelGroup layout="block" styleClass="vertical-line" />
+
+                  <!-- Second panel group for selling an item -->
+                <h:panelGroup layout="block" styleClass="panel-2">
+                     <h:panelGroup>
+                         <!-- Title for the second panel -->
+                       <h:panelGroup layout="block" styleClass="title">SALE AN ITEM</h:panelGroup>
+                         <!-- Button for selling -->
+                        <h:commandButton styleClass="btn"
+                                         value="sale"
+                                         action="#{bean.goToCreate}"/>
+                    </h:panelGroup>
+                </h:panelGroup>
+
+            </h:panelGroup>
+        </h:form>
+    </h:body>
+</xhtml>

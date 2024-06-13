@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This is the root element of the XHTML document, specifying the language and XML namespaces. -->
+<xhtml xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+       xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <!-- The head section contains metadata about the document, such as character set, viewport settings, and title. -->
+    <h:head>
+        <meta http-equiv="Content-Type"/>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="uploaditems.css"/>
+        <!-- Linking to external CSS file for styling. -->
+        <title>Sale Page</title>
+    </h:head>
+ <!-- The body section contains the main content of the document. -->
+    <h:body>
+        <!-- Top panel group containing header and navigation -->
+        <h:panelGroup id="top" >
+             <!-- Placeholder for top content, like header and navigation -->
+            <ui:insert name="top">
+                <header>
+                    <nav>
+                        <h:form>
+                            <h:commandLink value="Home"  action="#{bean.goToMainPage}"/>
+                            <h:commandLink value="About us"  action="#{bean.goToContactsPage}"/>
+                            <h:commandLink value="Shop"  action="#{bean.goToShopPage}"/>
+                            <h:commandLink value="Log off" action="#{bean.logout}" />
+                        </h:form>
+                    </nav>
+                </header>
+            </ui:insert>
+        </h:panelGroup>
+
+        <!-- Left panel group containing content -->
+        <h:panelGroup id="left">
+            <h:panelGroup styleClass="left_content">
+                <h2>
+                    <!-- Placeholder for title -->
+                    <ui:insert name="title"> </ui:insert>
+                </h2>
+                <!-- Placeholder for body content -->
+                <ui:insert name="body"></ui:insert>
+            </h:panelGroup>
+        </h:panelGroup>
+    </h:body>
+
+</xhtml>
